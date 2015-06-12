@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="14E33b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
+    </dependencies>
+    <scenes>
+        <!--HomesInterfaceController-->
+        <scene sceneID="km4-CI-LjH">
+            <objects>
+                <controller identifier="HomesInterfaceController" hidesWhenLoading="NO" id="Utp-AA-clB" customClass="HomesInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="dFj-Ui-cLE">
+                            <items>
+                                <tableRow identifier="HomeCell" id="pRv-oG-g3O" customClass="HomeCell" customModule="HMWatch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="ipw-nT-xCH">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="{Home}" textAlignment="center" id="gus-FP-v4W"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="gus-FP-v4W" id="LaH-SQ-hhM"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label alignment="center" text="You can add new home from iOS app." textAlignment="center" numberOfLines="0" id="whP-Y2-Q85">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="homesTable" destination="dFj-Ui-cLE" id="QBu-qi-OkA"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="283" y="98"/>
+        </scene>
+        <!--Accessories Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="AccessoriesInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Loading..." numberOfLines="0" id="CXL-9L-cfO"/>
+                        <table alignment="left" id="t8c-0S-dRj">
+                            <items>
+                                <tableRow identifier="AccessoryCell" id="n3t-PM-Y7X" customClass="AccessoryCellController" customModule="HMWatch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="eNV-2T-uF8">
+                                        <items>
+                                            <group width="2" height="0.80000000000000004" alignment="left" verticalAlignment="center" radius="1" id="aVf-8b-10y">
+                                                <color key="backgroundColor" red="1" green="0.038562041630403554" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" id="v0Q-ib-H2m"/>
+                                            <label alignment="left" verticalAlignment="center" text="{Accessory}" id="tmK-Zc-e90"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="4" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="accessoryImage" destination="v0Q-ib-H2m" id="dHy-qH-X3r"/>
+                                        <outlet property="accessoryLabel" destination="tmK-Zc-e90" id="516-Yc-TPe"/>
+                                        <outlet property="stateIndicator" destination="aVf-8b-10y" id="pBE-OJ-wHD"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="rda-0U-fK9">
+                            <items>
+                                <label alignment="center" text="No Accessory" textAlignment="center" id="9Ro-Mx-gHM"/>
+                                <label alignment="center" text="You can add accessory from iOS app." textAlignment="center" numberOfLines="0" id="kWD-bM-BbA">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="Wjo-PI-oiX">
+                        <items>
+                            <menuItem title="Select Home" image="Homes" id="HWI-5B-bBF">
+                                <connections>
+                                    <action selector="didPressSelectHome" destination="AgC-eL-Hgc" id="0jq-YU-biV"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="accessoriesTable" destination="t8c-0S-dRj" id="kvy-hg-o3e"/>
+                        <outlet property="noAccessoryGroup" destination="rda-0U-fK9" id="Kyq-g7-5RL"/>
+                        <outlet property="statusLabel" destination="CXL-9L-cfO" id="gOw-a4-WM8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="283" y="354"/>
+        </scene>
+        <!--SwitchInterfaceController-->
+        <scene sceneID="eSz-c7-a4p">
+            <objects>
+                <controller identifier="SwitchInterfaceController" hidesWhenLoading="NO" id="1mG-QT-1nN" customClass="SwitchInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <button alignment="left" id="Lvy-5w-tfN">
+                            <group key="contentGroup" width="1" alignment="left" id="fCp-j9-PMb">
+                                <items>
+                                    <imageView alignment="center" id="5r8-SR-52e"/>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="didPressPower" destination="1mG-QT-1nN" id="dwm-FP-M4n"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" hidden="YES" text="{State}" textAlignment="center" id="hfh-81-hi5">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <slider width="1" alignment="left" continuous="YES" maximum="100" steps="10" minimumImage="BrightnessDown" maximumImage="BrightnessUp" id="J2S-h9-hxv">
+                            <connections>
+                                <action selector="didUpdateBrightnessSlider:" destination="1mG-QT-1nN" id="ZgH-xo-hvB"/>
+                            </connections>
+                        </slider>
+                        <picker width="1" height="2" alignment="left" style="sequence" id="YUP-B1-n15">
+                            <connections>
+                                <action selector="didUpdateBrightnessPicker:" destination="1mG-QT-1nN" id="7O7-Ak-eky"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="brightnessPicker" destination="YUP-B1-n15" id="4Nn-6N-Uzb"/>
+                        <outlet property="brightnessSlider" destination="J2S-h9-hxv" id="nY4-VA-Nq2"/>
+                        <outlet property="currentStateImage" destination="5r8-SR-52e" id="VXl-5a-lZU"/>
+                        <outlet property="currentStateLabel" destination="hfh-81-hi5" id="yAX-Ff-Hcg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="483" y="354"/>
+        </scene>
+        <!--ThermostatInterfaceController-->
+        <scene sceneID="Ef4-3G-zTt">
+            <objects>
+                <controller identifier="ThermostatInterfaceController" hidesWhenLoading="NO" id="XsK-qg-lVd" customClass="ThermostatInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="130" alignment="center" verticalAlignment="center" backgroundImage="Background-Ring" contentMode="scaleAspectFit" layout="vertical" id="lUB-iF-Ofd">
+                            <items>
+                                <picker width="1" height="0.0" alignment="left" style="sequence" enabled="NO" id="VrQ-N0-BTl">
+                                    <connections>
+                                        <action selector="temperaturePickerDidChange:" destination="XsK-qg-lVd" id="wSw-tu-1Ok"/>
+                                    </connections>
+                                </picker>
+                                <group width="1" height="10" alignment="left" id="vbh-3e-jpf">
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </group>
+                                <label alignment="center" text="{Current}" id="xQI-fk-wEN"/>
+                                <button alignment="left" id="zQ3-E5-7Ah">
+                                    <group key="contentGroup" width="1" alignment="left" id="8YZ-2s-qWU">
+                                        <items>
+                                            <label alignment="center" text="--" textAlignment="center" id="ERm-to-odm">
+                                                <fontDescription key="font" type="system" weight="thin" pointSize="50"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <action selector="didPressTemperatureButton" destination="XsK-qg-lVd" id="aNb-rq-Djg"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="currentTemperatureLabel" destination="xQI-fk-wEN" id="alH-Ty-fpw"/>
+                        <outlet property="temperatureButton" destination="zQ3-E5-7Ah" id="fSH-hE-Q2K"/>
+                        <outlet property="temperatureLabel" destination="ERm-to-odm" id="aZi-pc-ULn"/>
+                        <outlet property="temperaturePicker" destination="VrQ-N0-BTl" id="g9p-Re-1bW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="483" y="608"/>
+        </scene>
+        <!--ColorsInterfaceController-->
+        <scene sceneID="oeV-u2-Aid">
+            <objects>
+                <controller identifier="ColorsInterfaceController" hidesWhenLoading="NO" id="o0l-ar-RZk" customClass="ColorsInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.80000000000000004" alignment="left" id="Ur9-lb-QW7">
+                            <items>
+                                <picker width="1" height="1" alignment="left" style="sequence" id="Vyr-X9-S2s">
+                                    <connections>
+                                        <action selector="didUpdateColorValue:" destination="o0l-ar-RZk" id="M1l-Kx-No7"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="Vyr-X9-S2s" id="wVB-up-1GF"/>
+                        <outlet property="pickerContainer" destination="Ur9-lb-QW7" id="yhn-fv-MFH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="663" y="354"/>
+        </scene>
+        <!--ErrorInfoController-->
+        <scene sceneID="w86-tC-ArE">
+            <objects>
+                <controller identifier="ErrorInfoController" id="ggC-kn-Pdr" customClass="ErrorInterfaceController" customModule="HMWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Title" textAlignment="center" numberOfLines="2" id="oPu-w9-c4i"/>
+                        <label alignment="center" verticalAlignment="center" text="Details" textAlignment="center" numberOfLines="4" id="Xiq-x2-Oj4">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <button width="1" alignment="center" verticalAlignment="center" hidden="YES" title="Button" id="uEs-7J-8DV">
+                            <connections>
+                                <action selector="didPressActionButton" destination="ggC-kn-Pdr" id="6VK-3H-5b0"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="actionButton" destination="uEs-7J-8DV" id="YSJ-tD-4H2"/>
+                        <outlet property="detailLabel" destination="Xiq-x2-Oj4" id="C6G-KG-mBh"/>
+                        <outlet property="titleLabel" destination="oPu-w9-c4i" id="9D6-Eq-exz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="483" y="98"/>
+        </scene>
+    </scenes>
+</document>
